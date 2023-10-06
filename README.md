@@ -10,6 +10,8 @@ I will be doing two experiments, first I will be comparing four different algori
 
 ## Instructions
 
+Tested with Python 11.4 using miniconda
+
 To install the necessary packages run
 ```
 pip install -r requirements.txt
@@ -34,41 +36,90 @@ The models were tested on a dataset with 42722 transactions with predition time 
 ### Decision Tree
 
 Overall Accuracy: 99.92%  
-Prediction Speed: 0.0060 seconds  
-False Negatives: 10  
+Prediction Speed: 0.0055 seconds  
+False Negatives: 10
 
-![Decision Tree Confusion Matrix](figs/part1/decisiontree_confusionmatrix.png)
+![Decision Tree Confusion Matrix Part 1](figs/part1/decisiontree_confusionmatrix.png)
 
 ### Logistic Regression
 Logistic Regression Overall Accuracy: 99.95%  
-Logistic Regression Prediction Speed: 0.0030 seconds  
-Logistic Regression False Negatives: 17  
+Logistic Regression Prediction Speed: 0.0040 seconds  
+Logistic Regression False Negatives: 17
 
-![Logistic Regression Confusion Matrix](figs/part1/logisticregression_confusionmatrix.png)
+![Logistic Regression Confusion Matrix Part 1](figs/part1/logisticregression_confusionmatrix.png)
 
 ### Random Forest
 Random Forest Overall Accuracy: 99.97%  
-Random Forest Prediction Speed: 0.2255 seconds  
-Random Forest False Negatives: 9  
+Random Forest Prediction Speed: 0.2252 seconds  
+Random Forest False Negatives: 9
 
-![Random Forest Confusion Matrix](figs/part1/randomforest_confusionmatrix.png)
+![Random Forest Confusion Matrix Part 1](figs/part1/randomforest_confusionmatrix.png)
 
 ### Neural Networks
 Neural Network Overall Accuracy: 99.96%  
-Neural Network Prediction Speed: 1.1850 seconds  
-Neural Network False Negatives: 8  
+Neural Network Prediction Speed: 1.1201 seconds  
+Neural Network False Negatives: 9
 
-![Neural Networks Confusion Matrix](figs/part1/neuralnetwork_confusionmatrix.png)
+![Neural Networks Confusion Matrix Part 1](figs/part1/neuralnetwork_confusionmatrix.png)
 
 ### Comparing Results
 
 | Model               |  Accuracy  | Prediction Time (seconds)  | False Negatives  |
 |---------------------|------------|----------------------------|------------------|
-| Decision Tree       | 0.9992     | 0.006                      | 10               |
-| Logistic Regression | 0.9994     | 0.002                      | 17               |
-| Random Forest       | 0.9997     | 0.225                      | 9                |
-| Neural Network      | 0.9996     | 1.185                      | 8                |
+| Decision Tree       | 99.92%     | 0.0055                      | 10               |
+| Logistic Regression | 99.95%     | 0.0040                      | 17               |
+| Random Forest       | 99.97%     | 0.2252                      | 9                |
+| Neural Network      | 99.96%     | 1.1201                      | 9                |
 
 ![Prediction Time](figs/part1/predictiontime.png)
 
 ![False Negatives](figs/part1/falsenegatives.png)
+
+# Part 2
+Undersampling is a technique used in machine learning to address the issue of class imbalance in a dataset. Class imbalance occurs when one class (typically the minority class) has significantly fewer instances than another class (majority class). In the context of binary classification, undersampling involves reducing the number of instances of the majority class to balance it with the minority class. Undersampling involves randomly removing instances from the majority class so that the class distribution becomes more balanced. The goal is to provide the model with a more equal representation of both classes during training.
+
+We are going to undersample the same [dataset](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) we used in part one and see if we can imporve the preformance. We will be using the same models so we can do a direct comparison. The main metric we will be looking at is false negatives.
+
+### Decision Tree
+
+Overall Accuracy (undersampled): 91.16%
+Prediction Speed (undersampled): 0.0060 seconds
+False Negatives (undersampled): 2
+
+![Decision Tree Confusion Matrix Part 2](figs/part2/decisiontree_confusionmatrix.png)
+![Decision Tree Confusion Matrix Comparision](figs/part2/decisiontree_confusionmatrix_compare.png)
+
+### Logistic Regression
+Logistic Regression Overall Accuracy (undersampled): 91.16%
+Logistic Regression Prediction Speed (undersampled): 0.0037 seconds
+Logistic Regression False Negatives (undersampled): 17
+
+![Logistic Regression Confusion Matrix Part 2](figs/part2/logisticregreesion_confusionmatrix.png)
+![Logistic Regression Confusion Matrix Comparision](figs/part2/logisticregreesion_confusionmatrix_compare.png)
+
+### Random Forest
+Random Forest Overall Accuracy (undersampled): 97.50%
+Random Forest Prediction Speed (undersampled): 0.1842 seconds
+Random Forest False Negatives (undersampled): 3
+
+![Random Forest Confusion Matrix Part 2](figs/part2/randomforest_confusionmatrix.png)
+![Random Forest Confusion Matrix Comparision](figs/part2/randomforest_confusionmatrix_compare.png)
+
+### Neural Networks
+Neural Network Overall Accuracy (undersampled): 99.95%
+Neural Network Prediction Speed (undersampled): 1.1566 seconds
+Neural Network False Negatives (undersampled): 8
+
+![Neural Networks Confusion Matrix Part 2](figs/part2/neuralnetwork_confusionmatrix.png)
+![Neural Networks Confusion Matrix Comparision](figs/part2/neuralnetwork_confusionmatrix_compare.png)
+
+### Comparing Results
+
+| Model (undersampled)|  Accuracy  | Prediction Time (seconds)   | False Negatives  |
+|---------------------|------------|-----------------------------|------------------|
+| Decision Tree       | 91.16%     | 0.0060                      | 2                |
+| Logistic Regression | 91.16%     | 0.0037                      | 17               |
+| Random Forest       | 97.50%     | 0.1842                      | 3                |
+| Neural Network      | 99.95%     | 1.1566                      | 8                |
+
+![False Negative Comparison](figs/part2/falsenegative.png)
