@@ -2,6 +2,8 @@
 ### For Data Mining-COMP-7800-01
 ### By: Brian Zschau
 
+The paper that goes along with this notebook can be found [here](https://github.com/zschaub/Data-Mining-Credit-Fraud/blob/main/Research%20Paper.pdf)
+
 This is a ipython notebook that explores different models and there effectiveness at detecting credit card fraud.
 
 We will be using the dataset found [here](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud). This dataset has 284,807 tranactions with 492 fradulent transactions making the dataset unbalanced. Due to confidentiality issues the data only containes time and amount columns and the rest of the columns have been transformed using PCA.
