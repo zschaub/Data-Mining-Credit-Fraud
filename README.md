@@ -122,4 +122,12 @@ Neural Network False Negatives (undersampled): 8
 | Random Forest       | 97.50%     | 0.1842                      | 3                |
 | Neural Network      | 99.95%     | 1.1566                      | 8                |
 
+| Model               | False Negatives (Original)  | False Negatives (Undersampled) | Change |
+|---------------------|-----------------------------|--------------------------------|--------|
+| Decision Tree       | 10                          | 2                              | -8     |
+| Logistic Regression | 17                          | 17                             | 0      |
+| Random Forest       | 9                           | 3                              | -6     |
+| Neural Network      | 9                           | 8                              | -1     |
+
+
 ![False Negative Comparison](figs/part2/falsenegative.png)
